@@ -207,3 +207,109 @@ footer nav ul {
 	background: #1D6154;
 	color: white;
 }
+
+/* Connexion log */
+  #login {
+  text-align: center;
+}
+
+#login h2 {
+  margin-bottom: 40px; 
+}
+
+/* Titre */
+.login-container h2 {
+  margin-bottom: 24px;
+  color: #0d6b4a;                
+  font-weight: 600;
+}
+
+/* Form */
+#login-form {
+  width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Labels */
+#login-form label {
+  text-align: left;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 6px;
+}
+
+/* Text input */
+#login-form input[type="email"],
+#login-form input[type="password"] {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #e3e3e3;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  outline: none;
+}
+
+#login-form input:focus {
+  border-color: #0d6b4a;
+}
+
+/* Bouton "se connecter" */
+.btn-login {
+  margin-top: 14px;
+  padding: 10px 24px;
+  border-radius: 999px;     
+  border: none;
+  background-color: #0d6b4a;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: center;
+}
+
+.btn-login:hover {
+  background-color: #138f63;
+}
+
+/* Lien mdp */
+.forgot {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #555;
+  text-decoration: underline;
+  align-self: center;
+}
+
+/* bouton modifier */
+.title-edit {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;  
+  gap: 20px;
+}
+
+.edit-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;                       
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.edit-area button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.edit-area i {
+  font-size: 16px;
+}
+
+header nav a {
+  text-decoration: none; 
+  color: inherit;          
+}
