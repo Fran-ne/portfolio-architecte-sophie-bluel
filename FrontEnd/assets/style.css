@@ -313,3 +313,52 @@ header nav a {
 	text-decoration: none;
 	color: inherit;
 }
+
+/*Mode edit*/
+
+/* Barre noir */
+.edit-bar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 59px;
+  background: black;
+  color: white;
+  font-family: "Work Sans";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* cache la barre par defaut */
+.edit-bar {
+  display: none;
+}
+
+/* mode edit -> affiche la barre noire */
+body.edit-mode .edit-bar {
+  display: flex;
+}
+
+/* mode edit -> move header */
+body.edit-mode header {
+  margin-top: 59px;
+}
+
+/* edit bouton cache par defaut */
+.edit-area {
+  display: none;
+}
+
+/* edit bouton si connecte */
+body.edit-mode .edit-area {
+  display: flex;
+}
+
+/* cache les filtres */
+body.edit-mode .filters {
+  display: none;
+}

@@ -98,3 +98,28 @@ fetch("http://localhost:5678/api/categories")
     .then(function (categories) {
         creerBoutons(categories);
     });
+
+    //edit mode script
+
+// recupere le token
+const token = localStorage.getItem("token");
+
+// si token existe -> edit mode
+if (token) {
+  document.body.classList.add("edit-mode");
+
+  // lien login -> logout
+  const lienLogin = document.querySelector('nav a[href="./login.html"]');
+
+  if (lienLogin) {
+    lienLogin.textContent = "logout";
+    lienLogin.href = "#";
+
+    // deconnexion
+    lienLogin.addEventListener("click", function (event) {
+      event.preventDefault();
+      localStorage.removeItem("token");
+      window.location.reload(); 
+    });
+  }
+}
