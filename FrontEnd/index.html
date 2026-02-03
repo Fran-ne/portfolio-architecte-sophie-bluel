@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-	<div class="edit-bar">Mode edit</div>
+	<div class="edit-bar">Mode édition</div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
@@ -40,7 +40,10 @@
 		<div class="title-edit">
   <h2>Mes Projets</h2>
   <div class="edit-area">
-    <button type="button">modifier</button>
+    <button type="button" class="js-open-modal">
+  <img class="icon-modif" src="./assets/icons/edit.png" alt="">
+  Modifier
+</button>
   </div>
 </div>
 		<div class="gallery"></div>
@@ -67,6 +70,54 @@
 		</ul>
 	</nav>
 </footer>
-<script src="./assets/script.js"></script>
+<script defer src="./assets/Scripts/script.js"></script>
+<script defer src="./assets/Scripts/modal.js"></script>
+
+<!-- Modale (hidden) -->
+<div class="modal-overlay hidden" id="modal-overlay">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="Fenêtre édition">
+
+    <!-- header modale -->
+    <div class="modal-top">
+      <button class="modal-back hidden" id="modal-back" type="button" aria-label="Retour">
+        ←
+      </button>
+
+      <button class="modal-close" id="modal-close" type="button" aria-label="Fermer">
+        ✕
+      </button>
+    </div>
+
+    <!-- Vue galerie -->
+    <section class="modal-view" id="view-galerie">
+      <h3>Galerie photo</h3>
+
+      <div class="mini-gallery" id="mini-gallery"></div>
+
+      <div class="modal-sep"></div>
+
+      <button class="btn-green" id="btn-go-form" type="button">
+        Ajouter une photo
+      </button>
+    </section>
+
+    <!-- vue form -->
+    <section class="modal-view hidden" id="view-form">
+      <h3>Ajout photo</h3>
+
+      <p style="text-align:center; opacity:0.7;">
+        Formulaire à venir
+      </p>
+
+      <div class="modal-sep"></div>
+
+      <button class="btn-grey" type="button" disabled>
+        Valider
+      </button>
+    </section>
+
+  </div>
+</div>
+
 </body>
 </html>

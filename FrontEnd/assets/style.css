@@ -217,14 +217,6 @@ footer nav ul {
 	margin-bottom: 40px;
 }
 
-/* Titre */
-.login-container h2 {
-	margin-bottom: 24px;
-	color: #0d6b4a;
-	font-weight: 600;
-}
-
-/* Form */
 #login-form {
 	width: 320px;
 	margin: 0 auto;
@@ -233,7 +225,6 @@ footer nav ul {
 	gap: 8px;
 }
 
-/* Labels */
 #login-form label {
 	text-align: left;
 	font-size: 0.9rem;
@@ -241,7 +232,6 @@ footer nav ul {
 	margin-top: 6px;
 }
 
-/* Text input */
 #login-form input[type="email"],
 #login-form input[type="password"] {
 	padding: 10px 12px;
@@ -256,7 +246,6 @@ footer nav ul {
 	border-color: #0d6b4a;
 }
 
-/* Bouton "se connecter" */
 .btn-login {
 	margin-top: 14px;
 	padding: 10px 24px;
@@ -273,7 +262,6 @@ footer nav ul {
 	background-color: #138f63;
 }
 
-/* Lien mdp */
 .forgot {
 	margin-top: 8px;
 	font-size: 0.85rem;
@@ -286,12 +274,12 @@ footer nav ul {
 .title-edit {
 	display: flex;
 	justify-content: center;
-	align-items: baseline;
-	gap: 20px;
+	align-items: center;
+	gap: 18px;
 }
 
 .edit-area {
-	display: flex;
+	display: none;
 	align-items: center;
 	gap: 8px;
 	font-size: 14px;
@@ -303,10 +291,17 @@ footer nav ul {
 	border: none;
 	padding: 0;
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 15px;
+	color: #000;
 }
 
-.edit-area i {
-	font-size: 16px;
+.edit-area button::before {
+	content: "✏️";
+	font-size: 14px;
+	line-height: 1;
 }
 
 header nav a {
@@ -314,51 +309,165 @@ header nav a {
 	color: inherit;
 }
 
-/*Mode edit*/
-
-/* Barre noir */
-.edit-bar {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 59px;
-  background: black;
-  color: white;
-  font-family: "Work Sans";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
+/* Ecart entre titre et galerie */
+#portfolio .gallery {
+	margin-top: 55px;
 }
 
-/* cache la barre par defaut */
+/* Mode edit */
 .edit-bar {
-  display: none;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 59px;
+	background: #000;
+	color: #fff;
+	font-family: "Work Sans";
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
 }
 
-/* mode edit -> affiche la barre noire */
+/* on affiche en mode edit */
 body.edit-mode .edit-bar {
-  display: flex;
+	display: flex;
 }
 
-/* mode edit -> move header */
+/* plus d’espace entre bandeau noir et header (logo + nav) */
 body.edit-mode header {
-  margin-top: 59px;
+	margin-top: 59px;
+	padding-top: 35px;
 }
 
-/* edit bouton cache par defaut */
-.edit-area {
-  display: none;
-}
-
-/* edit bouton si connecte */
-body.edit-mode .edit-area {
-  display: flex;
-}
-
-/* cache les filtres */
+/* on cache les filtres en mode edit */
 body.edit-mode .filters {
-  display: none;
+	display: none;
+}
+
+/* bouton modifier visible seulement si connecté */
+body.edit-mode .edit-area {
+	display: flex;
+}
+
+/* Modale */
+.hidden {
+	display: none !important;
+}
+
+.modal-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+}
+
+.modal-box {
+	width: 630px;
+	max-width: 90vw;
+	background: #fff;
+	border-radius: 10px;
+	padding: 30px 40px;
+	position: relative;
+}
+
+.modal-close,
+.modal-back {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.modal-close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 20px;
+}
+
+.modal-back {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-size: 18px;
+}
+
+.modal-view h3 {
+	text-align: center;
+	margin: 15px 0 25px;
+	font-family: "Work Sans";
+	font-size: 26px;
+	font-weight: 400;
+	color: #000;
+}
+
+.modal-sep {
+	height: 1px;
+	background: #dcdcdc;
+	margin: 25px 0;
+}
+
+.mini-gallery {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 12px;
+}
+
+.mini-card {
+	position: relative;
+}
+
+.mini-card img {
+	width: 100%;
+	height: 80px;
+	object-fit: cover;
+	display: block;
+}
+
+.btn-trash {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	background: #000;
+	color: #fff;
+	border: none;
+	width: 24px;
+	height: 24px;
+	border-radius: 2px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 13px;
+	opacity: 0.95;
+}
+
+.btn-trash:hover {
+	opacity: 1;
+	transform: scale(1.03);
+}
+
+.btn-green {
+	display: block;
+	margin: 0 auto;
+	padding: 10px 25px;
+	background: #1D6154;
+	color: #fff;
+	border: none;
+	border-radius: 60px;
+	cursor: pointer;
+}
+
+.btn-grey {
+	display: block;
+	margin: 0 auto;
+	padding: 10px 25px;
+	background: #a7a7a7;
+	color: #fff;
+	border: none;
+	border-radius: 60px;
 }
